@@ -1,0 +1,697 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>HX Research</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="3f56924d-354b-4027-b84a-c9382975eca5" class="page sans"><header><h1 class="page-title">HX Research</h1><p class="page-description"></p></header><div class="page-body"><div id="80702f67-48a7-49ef-a855-ab48cc8e7739" class="column-list"><div id="497a1d82-92dd-43c7-90b7-8315f3d2ad32" style="width:62.5%" class="column"><h1 id="a8a5f9a1-f68d-4e49-bccd-100bfd841fc0" class="">모두에게 감동을 주는<br/>최상의 금융 경험을 연구하는, <br/><br/><strong>단 하나의 팀</strong></h1><h3 id="55e3bd7a-083c-469d-b8ff-d9e0764fc951" class="">하나금융융합기술원 HX Research Cell</h3></div><div id="2276fa33-692d-4cfa-86de-f9a43c7093c6" style="width:37.5%" class="column"><figure id="ba646f1d-bdc9-4c88-9952-84ad088721c5" class="image"><a href="src/%25EC%25B6%2594%25EC%2596%25B5%25EC%2583%2581%25EC%25A0%2590_%25EC%259D%25B4%25EA%25B7%25BC%25ED%259D%25AC%25EB%258B%2598_%25EC%259B%2590%25EB%25B3%25B8-50-Edit-2.jpg"><img style="width:3643px" src="src/%25EC%25B6%2594%25EC%2596%25B5%25EC%2583%2581%25EC%25A0%2590_%25EC%259D%25B4%25EA%25B7%25BC%25ED%259D%25AC%25EB%258B%2598_%25EC%259B%2590%25EB%25B3%25B8-50-Edit-2.jpg"/></a></figure></div></div><hr id="2f772a48-533f-4251-8018-dd956b86d107"/><div id="62e8a7a9-7b4b-449d-9696-b1d4fafcdb65" class="column-list"><div id="e4bb0055-59d8-4eef-842a-2ef28f0396b2" style="width:68.75%" class="column"><h3 id="0d620c7d-393a-44e3-8301-cafc209ab9c2" class="">하나금융융합기술원 HX Research Cell은 하나금융의 손님과 구성원에게 최상의 금융 서비스 경험을 제공하기 위해 UX 리서치를 바탕으로 가치있는 인사이트를 발굴하는 연구 집단입니다.</h3><p id="39e0b293-9fbc-4445-ac99-6edda6e826d4" class="">
+</p></div><div id="1c3b1bee-d498-47bf-a198-9dfd953696e7" style="width:31.25%" class="column"><p id="8ad9270a-46ff-4b4a-a198-64928c2b312d" class="">
+</p><p id="4d903777-6426-461a-ae99-aea8b99fd452" class="">
+</p><p id="0b03590d-c6d8-41ac-971a-a9e65af22e8a" class="">
+</p></div></div><p id="722322d2-4471-4685-8955-032a29ed2dcb" class="">우리는 하나금융의 손님과 구성원을 대상으로 정량/정성 리서치를 설계 및 수행하고, 분석하여 종합적인 인사이트를 도출합니다. 이를 기반으로 더 나은 UX를 제공하기 위한 가설을 세우고 검증하여 최적의 하나금융의 서비스 경험을 위한 UX 전략을 제안합니다.</p><p id="a6cce95b-636f-4cbf-8d8d-d661fc671c37" class="">
+</p><div id="f4024cfd-8e8d-422e-90e2-1e6b98b94de4" class="column-list"><div id="447a2125-083f-4daf-93ec-a17bd56f4344" style="width:49.99999999999999%" class="column"><figure id="40763c6f-afc1-4a5d-b2d5-4bd6e922ad22" class="image"><a href="src/Frame_1.png"><img style="width:144px" src="src/Frame_1.png"/></a></figure><p id="6845c984-ea4b-4b28-8a9d-1709bc783e97" class="">UX 리서치를 효율적으로 진행하고, 하나금융그룹 내에 가치있는 인사이트를 제시하는 팀</p></div><div id="18ed6485-6b5f-4e18-ade8-1cef67e54632" style="width:49.99999999999999%" class="column"><figure id="6d8ef421-4873-46e9-a37f-9d34d84f6856" class="image"><a href="src/Frame_3.png"><img style="width:144px" src="src/Frame_3.png"/></a></figure><p id="d6356524-aaa7-4a46-adbd-6fb652053fe7" class="">UX 리서치 전문 조직으로서 UX 리서치 전문 조직으로서 하나금융그룹 내 UX 중심 문화 형성에 앞장서는 팀</p><p id="5249391b-c905-4bf9-83e9-71aa944d752a" class="">
+</p></div></div><div id="b4f1ab48-654c-49d4-abf4-778ce9a6535e" class="column-list"><div id="f8ada185-6ce5-4536-84dd-4a1283f24c80" style="width:50%" class="column"><figure id="ec9b682a-c1ea-4f10-a388-d27bad1a9181" class="image"><a href="src/Frame_4.png"><img style="width:144px" src="src/Frame_4.png"/></a></figure><p id="c1ba57a2-d1c6-462a-9e00-ca6d0f80a944" class="">하나금융그룹의 일관된 UX 아이덴티티와 UX 가치를 만들고 전파하는 팀</p></div><div id="051e01ab-f21a-4e00-802b-97b4e9816dc8" style="width:50%" class="column"><figure id="8c668471-092a-47ef-b141-64eb428724ec" class="image"><a href="src/Frame_5.png"><img style="width:144px" src="src/Frame_5.png"/></a></figure><p id="6400f66c-8dd4-4667-a329-8de37cd3286f" class="">금융UX 전문 연구 조직으로서 하나금융융합기술원의 대외적인 명성과 성과에 기여하는 팀</p></div></div><p id="93dc9fa2-8867-4a8c-9813-3987376fec9e" class="">
+</p><h2 id="147350ba-6a9f-460d-8c2b-f8d6702b0fc0" class="">what we believe</h2><div id="8d24eb90-96cf-40b1-9daa-243f9d55e665" class="column-list"><div id="e2450407-1d37-45a3-bce1-30a09919297e" style="width:49.99999999999999%" class="column"><h3 id="f19458fe-d5f3-40ca-9740-d25314f7f117" class="">📈 <strong>GROWTH</strong></h3><p id="7fe0463c-dbad-427e-ab16-5dd825c17a1a" class="">우리의 성장은 미래의 불확실함을 이겨나고 더 나은 미래를 꿈꾸기 위해 평생 지속되는 성숙의 과정이라고 믿습니다. </p></div><div id="f070ce1c-3954-4892-a88c-94ef38d4abe0" style="width:49.99999999999999%" class="column"><h3 id="d04c9e3b-8e9f-490b-be3b-34932fd45627" class="">😄 <strong>FUN</strong></h3><p id="24b6aaa3-0d33-4e47-b54e-9ba5186d9e19" class="">무언가를 기꺼이, 자발적으로, 욕심껏, 지속적으로 참여하게 만드는 원동력인 재미는, 함께 나눌 때 더 커진다고 믿습니다. </p></div></div><div id="d94fa6a8-7d34-4055-8fe2-85e01666d4a1" class="column-list"><div id="6802e510-398b-4afc-ab16-f69db37b36a4" style="width:50%" class="column"><h3 id="fb2881fb-758f-46cc-9ae4-32ccdfaaae6e" class="">👥 COLLABORATION</h3><p id="a8d63799-94fc-45dd-a976-ddbe01e610a5" class="">가장 좋은 협업은 서로에 대한 이해, 배려, 존중, 믿음과 책임감을 바탕으로 모두가 같은 목표를 향하는 것이라고 믿습니다. </p></div><div id="06861ff0-663b-4f40-a5dc-b67f57043a1d" style="width:50%" class="column"><h3 id="45915b54-6a0a-4da4-8991-69e0ee7f6c9e" class="">🔎 CURIOSITY</h3><p id="c6968ca7-5009-4813-bf9e-1ef19a6bb515" class="">우리의 호기심은 연구와 탐구의 원동력이며 대상에 대한 애정과 관심에 기반합니다. “왜?”라는 질문으로 시작하는 호기심이 실천으로 옮겨질 때, 우리의 성장과 발전이 계속되리라 믿습니다. </p></div></div><p id="e6cb5cbe-cae8-4094-b67b-79c11d8635d9" class="">
+</p><hr id="ec656087-ea85-4c8c-8a46-9079e558d199"/><h2 id="23f92dab-1ea7-49d7-9ab0-ce83eea0ca13" class="">how we work</h2><p id="4e709b39-18bb-42c6-ab1b-ec0dff489367" class="">
+</p><div id="cc54b6cf-4c8f-4231-a80e-c38a483f3fd7" class="column-list"><div id="db7fa1c3-2e5a-442d-bf13-6bd630cadfe2" style="width:4.166666666666666%" class="column"><h3 id="cef9b359-af34-4556-8e3b-0622b0a51b95" class="">1</h3><p id="58e2a874-9d05-4a97-a9b9-11e723c23f91" class="">
+</p></div><div id="79e5e6fd-0e18-4810-a394-6609b996ecd5" style="width:29.166666666666664%" class="column"><figure id="76fb1d6b-e5f9-4f7b-9c15-133e54535f4a" class="image"><a href="src/Frame_1%201.png"><img style="width:1000px" src="src/Frame_1%201.png"/></a></figure></div><div id="f31ffb77-fb3b-473f-a224-81a35178cf54" style="width:66.66666666666666%" class="column"><ul id="6fbbb1dd-0c04-4ba1-8ef8-31708fce7853" class="bulleted-list"><li style="list-style-type:disc">자신이 아는 것과 모르는 것을 이해하고, 새로운 것을 즐거운 마음으로 받아들입니다.</li></ul><ul id="8b05650e-139f-48a2-a4d1-2e36aab1db79" class="bulleted-list"><li style="list-style-type:disc">팀원의 성장을 응원하고 배운 것은 적극적으로 공유합니다.</li></ul><ul id="e64efb25-6a9a-4a33-bd7f-29be3754ab98" class="bulleted-list"><li style="list-style-type:disc">회고와 응용을 통해 더 높은 계획과 목표로 나아갑니다.</li></ul><p id="116b1cdd-3b6c-4eef-af79-f8fb6eaa6344" class="">
+</p></div></div><div id="41fafeeb-1426-4cbb-8854-21834fc2bbd2" class="column-list"><div id="5fce66e9-db6d-48c9-b5d4-534584b08430" style="width:4%" class="column"><h3 id="749f6822-bfd0-4c97-beb8-780c70cf777f" class="">2</h3><p id="94d79c51-47d4-4b77-8d9b-834925ec3f05" class="">
+</p></div><div id="e105a3e7-aad8-4d1e-a4f3-3ebcbf1e88d7" style="width:66.66666666666666%" class="column"><ul id="89d55a2e-fb32-45d9-9c64-eab52266160b" class="bulleted-list"><li style="list-style-type:disc">팀원과 스스로의 건강을 아끼고 튼튼한 몸과 마음을 가지도록 노력합니다.</li></ul><ul id="f9b9e503-a8ce-4c60-ac49-a15dece0ca01" class="bulleted-list"><li style="list-style-type:disc">서로에 대한 이해와 존중을 바탕으로 대화합니다.</li></ul><ul id="59ddf13c-cb94-44e0-9c9a-6619cd72e3f4" class="bulleted-list"><li style="list-style-type:disc">즐거운 마음으로 일하고, 즐거운 분위기를 만들기 위해 함께 노력합니다.</li></ul><p id="9586d1b1-3f35-4297-83db-974c73f9eac9" class="">
+</p></div><div id="6dd2ccca-6764-4cdb-a759-5fbb54fbb16d" style="width:29.333333333333332%" class="column"><figure id="bc8490b3-06cf-44d7-b956-9019d5ecf9cf" class="image"><a href="src/Frame_2.png"><img style="width:1000px" src="src/Frame_2.png"/></a></figure></div></div><div id="116c53c6-5cc9-4ead-903f-6f07fab618a8" class="column-list"><div id="6157e654-fc17-47cb-93e7-ce27170b98b6" style="width:4.166666666666666%" class="column"><h3 id="6c456af7-9377-4d03-a5bc-6e16c999c9fd" class="">3</h3><p id="416a5fcb-668a-46d1-a81b-f7fdd84f0824" class="">
+</p></div><div id="d51b8a57-2618-4fe5-aa3b-0c2203e41719" style="width:29.166666666666664%" class="column"><figure id="143917e7-d16f-4b3b-88b5-5be1acb962cf" class="image"><a href="src/20230522_134041_crop.jpg"><img style="width:1210px" src="src/20230522_134041_crop.jpg"/></a></figure></div><div id="52b3211e-a20f-4849-b49b-49708cbe8385" style="width:66.66666666666666%" class="column"><ul id="0b56521d-c782-4f85-b65b-e16d17825838" class="bulleted-list"><li style="list-style-type:disc">서로의 전문성에 대한 신뢰와 이해를 바탕으로 좋은 협업에 대해 고민하고 공유합니다.</li></ul><ul id="2a0a9c3c-cbdb-4b1d-85aa-946db34a7087" class="bulleted-list"><li style="list-style-type:disc">서로 동기 부여를 통해 좋은 팀원이 되도록 노력하고 팀의 성장을 함께 고민합니다.</li></ul><ul id="1fcb6836-8d3b-4528-bbb3-f20c2bb3d23c" class="bulleted-list"><li style="list-style-type:disc">투명하고 솔직한 공유를 통해 효율적으로 커뮤니케이션 합니다.</li></ul></div></div><div id="36e13bbb-25c2-4dc1-b628-5e18e07e081e" class="column-list"><div id="d459797e-e200-4f71-85fe-cd0b9e840ce5" style="width:4%" class="column"><h3 id="5e5fa7ff-4a08-4214-89e8-f9c81498167c" class="">4</h3><p id="efd40bcd-0578-4490-b2a2-b024b3d84760" class="">
+</p></div><div id="c8a3f309-97bd-4f01-9576-cda65ae02191" style="width:66.66666666666666%" class="column"><ul id="94780276-c257-40df-9275-edb07c621ee5" class="bulleted-list"><li style="list-style-type:disc">연구 주제에 대한 관심과 애정을 가지고 유연하고 개방적인 태도로 일합니다.</li></ul><ul id="e69f53dd-f10b-4d1e-9dde-b3d420da0d60" class="bulleted-list"><li style="list-style-type:disc">항상 질문하고 의심하는 태도를 가지고 다양한 분야를 의식적으로 접합니다.</li></ul><ul id="5bb162a6-62e0-4531-b6b9-63d5161b2c5d" class="bulleted-list"><li style="list-style-type:disc">호기심을 충족하는 과정에서 얻은 가치 중 팀원들에게 도움이 될만한 것은 정리하고 공유합니다.</li></ul><p id="638e43a5-e229-4915-a1c4-e0fa63c91011" class="">
+</p></div><div id="a45dd52f-fb8e-4bde-9ece-e3db09ebeedc" style="width:29.333333333333332%" class="column"><figure id="2ef3e5af-3b70-4b04-81f0-81fe267fbbc0" class="image"><a href="src/20230522_134258_crop.jpg"><img style="width:1060px" src="src/20230522_134258_crop.jpg"/></a></figure></div></div><p id="c09a4a90-9d5a-4c63-b352-0562775f37b0" class="">
+</p><hr id="f75f06ca-5ad6-4c59-ac26-8d13aabe7993"/><h2 id="d9485c4c-0475-4c6d-a646-5f821af40b4b" class="">meet the team</h2><div id="f80fc5a1-b739-4fb5-bd2e-193799a32216" class="collection-content"><h4 class="collection-title">Profile</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>이름</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>LinkedIn</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>나와 관련된 키워드 3가지</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>담당 업무</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>취미</th></tr></thead><tbody><tr id="a72613e7-d1e9-4a47-a2b9-fd1c397d3cb7"><td class="cell-title"><a href="about/HXCers/Profile%20a31f5d10bc8d4b4b92ff53621ec9c8f1/Profile/Bobby%20a72613e7d1e94a47a2b9fd1c397d3cb7.html"><span class="icon">😈</span>Bobby</a></td><td class="cell-Ip&gt;n"><a href="https://www.linkedin.com/in/sanghyun-kwon-6115b811a/" class="url-value">https://www.linkedin.com/in/sanghyun-kwon-6115b811a/</a></td><td class="cell-@kdE"></td><td class="cell-kkR{">UX 리서치, 팀 운영</td><td class="cell-^n}?">게임, 영화감상</td></tr><tr id="9c3a35bb-7765-4765-b76d-ad77d458ff7a"><td class="cell-title"><a href="about/HXCers/Profile%20a31f5d10bc8d4b4b92ff53621ec9c8f1/Profile/elle%209c3a35bb77654765b76dad77d458ff7a.html"><span class="icon">🐾</span>elle</a></td><td class="cell-Ip&gt;n"><a href="https://www.linkedin.com/in/leegeunhee/" class="url-value">https://www.linkedin.com/in/leegeunhee/</a></td><td class="cell-@kdE"><span class="selected-value select-value-color-purple">고양이</span><span class="selected-value select-value-color-yellow">당중독</span><span class="selected-value select-value-color-green">채식</span></td><td class="cell-kkR{">정성리서치</td><td class="cell-^n}?">새로운 취미 만들기</td></tr><tr id="56ff42d7-3d0c-4b2f-963f-1c1a89f2d21d"><td class="cell-title"><a href="about/HXCers/Profile%20a31f5d10bc8d4b4b92ff53621ec9c8f1/Profile/Jenny%2056ff42d73d0c4b2f963f1c1a89f2d21d.html"><span class="icon">💗</span>Jenny</a></td><td class="cell-Ip&gt;n"><a href="https://www.linkedin.com/in/jihee-kim-585479229/" class="url-value">https://www.linkedin.com/in/jihee-kim-585479229/</a></td><td class="cell-@kdE"><span class="selected-value select-value-color-brown">👙입다이어터</span><span class="selected-value select-value-color-pink">💗핑크</span><span class="selected-value select-value-color-orange">💳동호회회장</span></td><td class="cell-kkR{">필요한 일은 다 해야죠!</td><td class="cell-^n}?">(23-11 기준) 📚독서, 🎬영화관람, 🏋️‍♀️헬스(?), 🔡영어공부(?)</td></tr><tr id="3f2a9999-06b8-4922-ac1f-dcd03789e4c3"><td class="cell-title"><a href="about/HXCers/Profile%20a31f5d10bc8d4b4b92ff53621ec9c8f1/Profile/Rosie%203f2a999906b84922ac1fdcd03789e4c3.html"><span class="icon">🐰</span>Rosie</a></td><td class="cell-Ip&gt;n"></td><td class="cell-@kdE"></td><td class="cell-kkR{"></td><td class="cell-^n}?">수영</td></tr></tbody></table><br/><br/></div><p id="bfc79485-a995-4cb4-a158-dc41491d9d01" class="">
+</p><hr id="3d8a8ac2-4866-458f-90ba-aa635f3752fe"/><h2 id="e4a9db81-100d-4493-ac71-e9a9ed3a5528" class="">explore our work</h2><div id="f5a4887c-d108-4584-a549-d9db03e9d6c8" class="collection-content"><h4 class="collection-title">Showcase</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>이름</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px"/></span>기간</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>파트너</th></tr></thead><tbody><tr id="15eafbd4-cdae-4700-8de8-3f8522ce83e1"><td class="cell-title"><a href="src/Showcase%20f5a4887cd1084584a549d9db03e9d6c8/%E1%84%89%E1%85%B3%E1%84%86%E1%85%A1%E1%84%90%E1%85%B3%E1%84%8E%E1%85%A1%E1%86%BC%E1%84%80%E1%85%AEM%2015eafbd4cdae47008de83f8522ce83e1.html"><span class="icon">🏦</span>스마트창구M</a></td><td class="cell-uRan">2022</td><td class="cell-_|wA"><span class="selected-value select-value-color-gray">하나은행</span></td></tr><tr id="e6c1e3c9-7d50-4c70-b07e-6391d6965eca"><td class="cell-title"><a href="src/Showcase%20f5a4887cd1084584a549d9db03e9d6c8/%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%87%E1%85%AE%E1%84%8C%E1%85%A1%202%200%20e6c1e3c97d504c70b07e6391d6965eca.html"><span class="icon">👦</span>아이부자 2.0</a></td><td class="cell-uRan">2022</td><td class="cell-_|wA"><span class="selected-value select-value-color-gray">하나은행</span></td></tr><tr id="177783df-2c5e-4d1e-9dc8-15981a1f3003"><td class="cell-title"><a href="src/Showcase%20f5a4887cd1084584a549d9db03e9d6c8/%E1%84%89%E1%85%B3%E1%84%86%E1%85%A1%E1%84%90%E1%85%B3%E1%84%8E%E1%85%A1%E1%86%BC%E1%84%80%E1%85%AE%20177783df2c5e4d1e9dc815981a1f3003.html">스마트창구</a></td><td class="cell-uRan">2023</td><td class="cell-_|wA"><span class="selected-value select-value-color-gray">하나은행</span></td></tr><tr id="0d230118-7929-49f5-a7fe-83a6068f349a"><td class="cell-title"><a href="src/Showcase%20f5a4887cd1084584a549d9db03e9d6c8/TV%E1%84%87%E1%85%A2%E1%86%BC%E1%84%8F%E1%85%B5%E1%86%BC%200d230118792949f5a7fe83a6068f349a.html">TV뱅킹</a></td><td class="cell-uRan">2023</td><td class="cell-_|wA"><span class="selected-value select-value-color-gray">하나은행</span></td></tr><tr id="44b92141-eabf-4ec5-ae3c-beb17d98efa2"><td class="cell-title"><a href="src/Showcase%20f5a4887cd1084584a549d9db03e9d6c8/AI%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%80%E1%85%B3%E1%86%B7%E1%84%90%E1%85%AE%E1%84%8C%E1%85%A1%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%2044b92141eabf4ec5ae3cbeb17d98efa2.html">AI연금투자솔루션</a></td><td class="cell-uRan">2023</td><td class="cell-_|wA"><span class="selected-value select-value-color-gray">하나은행</span></td></tr><tr id="d52bf1bf-023e-4d1d-b836-9735fb597c40"><td class="cell-title"><a href="src/Showcase%20f5a4887cd1084584a549d9db03e9d6c8/%E1%84%86%E1%85%A1%E1%84%8F%E1%85%A6%E1%84%90%E1%85%B5%E1%86%BC%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%86%BA%E1%84%91%E1%85%A9%E1%86%B7%20UI%20UX%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%90%E1%85%A9%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC%20d52bf1bf023e4d1db8369735fb597c40.html">마케팅플랫폼 UI/UX 검토 및 적용</a></td><td class="cell-uRan">2023</td><td class="cell-_|wA"><span class="selected-value select-value-color-gray">하나은행</span></td></tr><tr id="bc8fc4c3-408d-4966-b4b1-7981e8c0a02d"><td class="cell-title"><a href="src/Showcase%20f5a4887cd1084584a549d9db03e9d6c8/%E1%84%80%E1%85%B3%E1%86%B7%E1%84%8B%E1%85%B2%E1%86%BC%20%E1%84%83%E1%85%A9%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB%20%E1%84%82%E1%85%A2%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%80%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%20UX%20%E1%84%89%E1%85%B5%E1%84%82%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A9%20%E1%84%87%20bc8fc4c3408d4966b4b17981e8c0a02d.html">금융 도메인 내 가상인간 활용 UX 시나리오 발굴</a></td><td class="cell-uRan">2023</td><td class="cell-_|wA"><span class="selected-value select-value-color-brown">카이스트</span><span class="selected-value select-value-color-brown">하나금융경영연구소</span></td></tr><tr id="037ee329-a7cb-47aa-bc66-251e1215d22e"><td class="cell-title"><a href="src/Showcase%20f5a4887cd1084584a549d9db03e9d6c8/%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%87%E1%85%AE%E1%84%8C%E1%85%A1%203%200%20037ee329a7cb47aabc66251e1215d22e.html">아이부자 3.0</a></td><td class="cell-uRan">2023</td><td class="cell-_|wA"><span class="selected-value select-value-color-gray">하나은행</span></td></tr></tbody></table><br/><br/></div><p id="3a7418eb-f7e7-463d-a144-65c91f7b2035" class="">
+</p><hr id="7964bf7e-6142-4eef-81cb-323b794a48e2"/><h2 id="b1dd7228-6962-4778-add3-6c3f7705262b" class="">work with us</h2><div id="17d98f30-549f-4600-812f-bb9645c925f4" class="collection-content"><h4 class="collection-title"></h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>이름</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>지원 기간</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th></tr></thead><tbody><tr id="d76e8a4c-4b72-4f40-91b0-395bfe78a2f7"><td class="cell-title"><a href="src/%E1%84%8C%E1%85%A6%E1%84%86%E1%85%A9%E1%86%A8%20%E1%84%8B%E1%85%A5%E1%86%B9%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%87%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3%2017d98f30549f4600812fbb9645c925f4/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%A2%E1%84%91%E1%85%AE%E1%86%AF%20%E1%84%83%E1%85%B3%E1%86%BC%E1%84%85%E1%85%A9%E1%86%A8%20d76e8a4c4b724f4091b0395bfe78a2f7.html"><span class="icon">🏆</span>인재풀 등록</a></td><td class="cell-Awd`"><time>@2019년 1월 1일 오전 12:00 → 2029년 12월 31일 오후 11:59</time></td><td class="cell-n:gg"><a href="https://hanati.recruiter.co.kr/app/jobnotice/view?systemKindCode=MRS2&amp;jobnoticeSn=34933" class="url-value">https://hanati.recruiter.co.kr/app/jobnotice/view?systemKindCode=MRS2&amp;jobnoticeSn=34933</a></td></tr></tbody></table><br/><br/></div><p id="c75f247d-a6aa-4d8a-a332-83d4f6919d31" class="">
+</p><h3 id="9f6a7636-92bc-4d6f-b805-58a9a5f474c5" class="">Contact</h3><p id="2a259a84-bd05-4cf8-953d-a38fc6830330" class="">이메일 hit.uxcell@gmail.com</p><p id="d2fb34ae-1da2-4269-bd31-b4331716f08d" class="">하나금융융합기술원 홈페이지 <a href="https://hit.hanati.co.kr/ko/researchAreas/ux">https://hit.hanati.co.kr/ko/researchAreas/ux</a></p><p id="16aabfce-d1ff-4304-b518-443c7d4215dc" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
